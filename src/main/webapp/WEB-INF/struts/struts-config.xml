@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+        "http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+
+    <form-beans>
+        <form-bean name="productForm" type="org.test.project.form.ProductForm" />
+        <form-bean name="categoryForm" type="org.test.project.form.CategoryForm" />
+    </form-beans>
+
+    <action-mappings>
+        <action path="/home" type="org.test.project.action.HomeAction" scope="request">
+            <forward name="success" path="/jsp/home.jsp" />
+        </action>
+        <action path="/product" type="org.test.project.action.ProductAction" input="/WEB-INF/pages/error.jsp" validate="true" name="productForm" parameter="action" scope="request">
+            <forward name="success" path="/jsp/product.jsp" />
+        </action>
+        <action path="/category" type="org.test.project.action.CategoryAction" input="/WEB-INF/pages/error.jsp" validate="true" name="categoryForm" parameter="action" scope="request">
+            <forward name="success" path="/jsp/category.jsp" />
+        </action>
+    </action-mappings>
+
+    <message-resources parameter="MessageResources"/>
+
+    <plug-in className="org.apache.struts.tiles.TilesPlugin">
+
+        <set-property property="definitions-config" value="/WEB-INF/struts/tiles-defs.xml" />
+        <set-property property="definitions-debug" value="2" />
+        <set-property property="moduleAware" value="true" />
+    </plug-in>
+</struts-config>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 1.3//EN"
+        "http://struts.apache.org/dtds/tiles-config_1_3.dtd">
+
+<tiles-definitions>
+    <!-- Base Tiles Definition -->
+    <definition name="mainLayout" path="/WEB-INF/pages/template.jsp">
+        <put name="header" value="/WEB-INF/pages/header.jsp"></put>
+        <put name="footer" value="/WEB-INF/pages/footer.jsp"></put>
+    </definition>
+
+    <definition name="homePage" extends="mainLayout">
+        <put name="title" value="Home page"></put>
+        <put name="body" value="/WEB-INF/pages/homePage.jsp"></put>
+    </definition>
+
+    <definition name="productPage" extends="mainLayout">
+        <put name="title" value="Product page"></put>
+        <put name="body" value="/WEB-INF/pages/productPage.jsp"></put>
+    </definition>
+
+    <definition name="categoryPage" extends="mainLayout">
+        <put name="title" value="Category page"></put>
+        <put name="body" value="/WEB-INF/pages/categoryPage.jsp"></put>
+    </definition>
+</tiles-definitions>

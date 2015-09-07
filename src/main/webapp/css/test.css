@@ -1,0 +1,25 @@
+#productTable {
+    margin-top: 10px;
+}
+#productTable thead > tr {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+#categoryTree{
+    margin-top: 10px;
+    width: 50%;
+}
+
+#categoryTree .dropOver{
+    background-color: #149bdf;
+}
+
+footer p{
+    padding-left: 100px;
+}
+
+#productBlock .product > a{
+    padding-bottom: 1px;
+    padding-top: 1px;
+}

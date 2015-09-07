@@ -1,0 +1,20 @@
+*.class
+
+# Package Files #
+*.war
+*.ear
+
+*.ser
+
+# Intellij idea files
+*.iml
+*.ipr
+*.iws
+.idea/
+
+.classpath
+.project
+.settings/
+target/
+#co-web/co-web-germany/src/main/webapp/resources/**/bower_components/
+co-web/co-web-germany/src/main/webapp/resources/**/node_modules/

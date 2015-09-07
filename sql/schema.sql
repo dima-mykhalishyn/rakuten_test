@@ -1,0 +1,31 @@
+CREATE SCHEMA IF NOT EXISTS test;
+use test;
+
+CREATE TABLE IF NOT EXISTS product (
+ id BIGINT PRIMARY KEY AUTO_INCREMENT,
+ product_id VARCHAR(255) NOT NULL,
+ name VARCHAR(255) NOT NULL,
+ description TEXT,
+ price FLOAT(7, 2),
+ created TIMESTAMP,
+ UNIQUE(product_id)
+) ENGINE=INNODB;
+
+CREATE TABLE IF NOT EXISTS category (
+ id BIGINT PRIMARY KEY AUTO_INCREMENT,
+ parent_id BIGINT,
+ name VARCHAR(255) NOT NULL,
+ UNIQUE(NAME, parent_id),
+ FOREIGN KEY (parent_id) REFERENCES category(ID)
+) ENGINE=INNODB;
+
+CREATE TABLE IF NOT EXISTS product_category (
+ id BIGINT PRIMARY KEY AUTO_INCREMENT,
+ category_id BIGINT NOT NULL,
+ product_id BIGINT NOT NULL,
+ UNIQUE(category_id, product_id),
+ FOREIGN KEY (category_id) REFERENCES category(ID),
+ FOREIGN KEY (product_id) REFERENCES product(ID)
+) ENGINE=INNODB;
+
+
